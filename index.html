@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostalgia Portal - 2014</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto">
+            <a class="text-lg font-bold" href="#">Nostalgia Portal</a>
+            <div class="flex space-x-4">
+                <a class="hover:underline" href="#movies">Movies</a>
+                <a class="hover:underline" href="#tv">TV Shows</a>
+                <a class="hover:underline" href="#sports">Sports Events</a>
+                <a class="hover:underline" href="#music">Pop Stars</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-10">
+        <h1 class="text-4xl font-bold">Relive 2014!</h1>
+        <p class="mt-2">A year filled with memorable moments in movies, TV shows, sports, and music.</p>
+        <button id="select-2014" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Select 2014</button>
+    </header>
+
+    <div class="container mx-auto mt-5 hidden" id="content">
+        <div id="music-control" class="text-center mb-4">
+            <audio id="background-music" src="assets/Songs/happy.mp3" preload="auto"></audio>
+            <button id="play-music" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Play Music</button>
+            <button id="stop-music" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Stop Music</button>
+            <input type="range" id="volume-control" class="ml-2" min="0" max="1" step="0.1" value="0.5">
+        </div>
+
+        <section id="movies" class="py-10">
+            <h2 class="text-4xl font-bold text-center mb-8">Movies of 2014</h2>
+            <div class="flex overflow-x-auto space-x-4 px-4">
+              <div class="min-w-[200px] max-w-[250px] transition-transform transform hover:scale-105">
+                <img src="assets/movies/pk.jpg" alt="PK" class="w-full h-auto rounded-lg">
+                <h3 class="text-lg font-semibold text-center mt-2">PK</h3>
+                <p class="text-sm text-gray-600 text-center">A satirical comedy-drama about an alien's journey.</p>
+              </div>
+              <div class="min-w-[200px] max-w-[250px] transition-transform transform hover:scale-105">
+                <img src="assets/movies/haider.jpg" alt="Haider" class="w-full h-auto rounded-lg">
+                <h3 class="text-lg font-semibold text-center mt-2">Haider</h3>
+                <p class="text-sm text-gray-600 text-center">A modern adaptation of Shakespeare's Hamlet set in Kashmir.</p>
+              </div>
+              <div class="min-w-[200px] max-w-[250px] transition-transform transform hover:scale-105">
+                <img src="assets/movies/happy_new_year.jpg" alt="Happy New Year" class="w-full h-auto rounded-lg">
+                <h3 class="text-lg font-semibold text-center mt-2">Happy New Year</h3>
+                <p class="text-sm text-gray-600 text-center">A heist comedy-drama about a group of thieves.</p>
+              </div>
+              <!-- Add more movie tiles as needed -->
+            </div>
+          </section>
+          
+
+        <div id="tv" class="mt-5">
+            <h2 class="text-3xl font-bold">TV Shows from 2014</h2>
+            <div class="mt-4">
+                <p><strong>Kumkum Bhagya:</strong> A romantic drama that became a household favorite.</p>
+                <p><strong>Yeh Hai Mohabbatein:</strong> A love story that captivated audiences with its emotional depth.</p>
+            </div>
+        </div>
+
+        <div id="sports" class="mt-5">
+            <h2 class="text-3xl font-bold">Sports Events</h2>
+            <div class="mt-4">
+                <p><strong>ICC Cricket World Cup:</strong> India reached the semi-finals, showcasing incredible talent.</p>
+                <p><strong>Commonwealth Games:</strong> India won a total of 64 medals, marking a successful campaign.</p>
+            </div>
+        </div>
+
+        <div id="music" class="mt-5">
+            <h2 class="text-3xl font-bold">Pop Stars</h2>
+            <div class="mt-4">
+                <p><strong>Arijit Singh:</strong> Gained immense popularity with songs like "Tum Hi Ho" from Aashiqui 2.</p>
+                <p><strong>Shreya Ghoshal:</strong> Continued her reign as one of the leading playback singers.</p>
+            </div>
+        </div>
+
+        <button id="submit-memory" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 mt-4 rounded">Submit Your Memory</button>
+        <div id="discussion-section" class="mt-4"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="fetchMovies.js"></script>
+</body>
+</html>
